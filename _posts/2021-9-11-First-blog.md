@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Blog 1"
+title:  "this is Blog 1 "
 date:   2021-09-11 22:15:25 -0700
 categories: jekyll update
 ---
