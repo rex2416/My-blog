@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 
 
@@ -26,5 +26,3 @@ Business central will help companies be able to fully manage their business with
 - Service management
 - Warehouse management
 - Manufacturing
-
-
