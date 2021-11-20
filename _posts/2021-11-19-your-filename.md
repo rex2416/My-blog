@@ -1,0 +1,49 @@
+---
+published: false
+---
+## A New Post
+
+## HTTPS
+
+Adding security to websites is important to protect from any malicious intent from others. And one way for this to be done is having the site be HTTPS which adds SSL secure socket layer or TLS transport layer security. Having This form of security on all websites will help secure data that is sent over the internet. This will prevent any hackers that can capture any keywords you may type such as username and password. The way it works is by having all the data sent and received be encrypted to ensure no hackers can get a hold of any sensitive data and will only see random strings/characters. This can be added to plenty of websites and one example of adding a TLS certificate can be done in an AWS ec2 instance. You can download this on the ec2 instance but some prerequisites  must be needed to accomplish this task. The EC2 must be launched, have the ec2 security group have the ports 80, 442, and22 open which is http, https and ssh. Lastly the domain must be set on route 53. The first step after that would be to install apache in the ec2 instance.
+
+- Step one install apache
+
+~~~
+$ sudo yum update -y
+$ sudo yum install -y httpd
+$ sudo systemctl start httpd
+$ sudo systemctl enable httpd
+$ sudo systemctl is-enabled httpd
+~~~
+
+- step 2 create a localhost.crt 
+~~~
+$ sudo yum install -y mod_ssl
+$ cd /etc/pki/tls/certs
+$ sudo ./make-dummy-cert localhost.crt
+~~~
+- Step 3 install certbot 
+
+~~~
+$ sudo wget -r --no-parent -A 'epel-release-*.rpm' http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/
+$ sudo rpm -Uvh dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-*.rpm
+$ sudo yum-config-manager --enable epel*
+~~~
+- This will require you to enter /etc/httpd/conf/httpd.conf where you must add the required lines after **Listen 80** replace example.com to your domain name
+~~~
+<VirtualHost *:80>
+    DocumentRoot "/var/www/html"
+    ServerName "example.com"
+    ServerAlias "www.example.com"
+</VirtualHost>
+~~~
+
+The last final commands will be to restart and run certbot and agree to the terms 
+
+$ sudo systemctl restart httpd
+$ sudo yum install -y certbot python2-certbot-apache
+$ sudo certbot
+
+
+
