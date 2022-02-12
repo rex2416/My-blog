@@ -36,6 +36,4 @@ sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.rel
 
 sudo apt install terraform
 
-~~~## A New Post
-
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
+~~~
