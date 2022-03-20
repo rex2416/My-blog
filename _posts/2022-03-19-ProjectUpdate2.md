@@ -1,9 +1,8 @@
 ---
-published: false
+published: true
 ---
 ## Space Invaders
 
 **Project update 2**
 
 The space invaders game is making progress with having the background for the space environment set to have the visual effects constantly moving in space. All this was done in CSS with just the bare basics background. The newest update in the progress of the game is having implemented basic movement with having first declared the const variables to enable movement of the left and right. This was done with their corresponding numbers declared of 37 and 39. Along with having the game height and width, it also declares how wide the spaceships will be. The step was creating the player which was done using a container in javascript which will load up the function inside. This will load up the default starting position for the game along with loading up the image of the actual spaceship. The next step in creating the player movement was by creating another function which will have if-else statements to determine if the specific left and right is pressed. This will then change the corresponding const variables “left” or “right” to true and move the ship in that direction. To ensure that the ship does not keep moving infinitely, another function is created to set the variables back to false once the key is released. This will all be done by adding event listeners to ensure it is always listening to when these keys are pressed. The last two steps are updating the canvas every frame along with a function to move the x variables positive or negative for the player movement. So once the left or right key is pressed the updated coords will be posted on the canvas and will visually show the ship moving left and right. In the next update, adding enemies will be the priority.
-
