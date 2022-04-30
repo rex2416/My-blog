@@ -1,0 +1,6 @@
+---
+published: false
+---
+## Final Project blog
+
+In the last project update we added lasers for the enemies along with the enemy having a random cooldown to prevent all enemies from shooting. A new function was created where we create a hitbox for both the player ship and the enemy laser. The next  step was adding an if statement to check if both of these collide and if it does to trigger the game over phase in the main function. This is done by changing the game over state to true which the main function will keep checking. Once true it will return the game pausing it and call for a reset. The way to check for a victory condition is to have an if statement check for the enemy list to reach 0. In the html page there are two div class for win and lose which both will have a clickable button to reload and the game. To make the button more stylish in the CSS a simple box will appear red box determining lose and a green box for a victory screen. Lastly simple sound effects were also added to be triggered once in the victory or lose condition. Having completed the game our team is now proposing a way to be able to load this game into our site. A few steps were thought of with one having the game be pulled in an S3 bucket as well as having terraform pull from our github. We plan on having this implemented before the end of the first week of may. 
